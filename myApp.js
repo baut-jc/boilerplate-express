@@ -3,7 +3,7 @@ let app = express();
 require('dotenv').config()
 
 app.use(function (require, res, next) {
-  console.log(require.method + require.path + " - " + require.ip)
+  console.log(require.method + " " + require.path + " - " + require.ip)
   next()
 })
 
