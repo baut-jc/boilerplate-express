@@ -2,6 +2,11 @@ let express = require('express');
 let app = express();
 require('dotenv').config()
 
+app.use(function (require, res, next) {
+  console.log(require.method + " " + require.path + " - " + require.ip)
+  next()
+})
+
 app.get("/", (require, res) => {
   res.sendFile(__dirname + "/views/index.html")
 })
@@ -32,9 +37,12 @@ app.get ("/json", function (require, res) {
   //app.use(<mware-function>) --> will exectue functions for all request.
   //app.post(<mware-function) --> will execute function for POST request ONLY.
   // (GET, DELETE, PUT, ....) for anologous methods exist for all the HTTP verbs.
-
-  // every request shoulf return a STRING to the console "method path - ip"
+  
+  // every request should return a STRING to the console "method path - ip"
+ 
   //GET /json - ::ffff:127.0.0.1
+
+  //must be placed on the top because we are adding a middleware to all routes.
 
 
 
