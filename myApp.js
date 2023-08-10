@@ -28,5 +28,16 @@ app.get ("/json", function (require, res) {
   }
 })
 
+// **7)Implement a Root-Level Request Logger MiddleWare
+  //app.use(<mware-function>) --> will exectue functions for all request.
+  //app.post(<mware-function) --> will execute function for POST request ONLY.
+  // (GET, DELETE, PUT, ....) for anologous methods exist for all the HTTP verbs.
+
+  // every request shoulf return a STRING to the console "method path - ip"
+  //GET /json - ::ffff:127.0.0.1
+
+
+
+
  module.exports = app;
 //  http://localhost:3000/
