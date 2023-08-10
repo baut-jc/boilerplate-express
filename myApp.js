@@ -41,3 +41,17 @@ app.get ("/json", function (require, res) {
 
  module.exports = app;
 //  http://localhost:3000/
+
+//GIT pushing to own forked repo
+  // git remote add someone https://fork.url --> #create remote called "someone"
+  // #fetch the changes from that remote
+    // git fetch someone
+  
+  // #rebase the work you want to send onto the fork's work
+    // git branch for-someone my-branch --> #create branch "for-someone" at "my-branch"
+    // git rebase master for-someone --onto someone/master --> #take commits from the "for-someone" branch down to your "master" branch and rebase it onto "someone" "master" branch
+  
+  //#then push your changes to the other remote
+    // git push someone for-someone --> #push branch "for-someone" to the "someone" remote
+
+
