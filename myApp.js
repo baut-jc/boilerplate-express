@@ -44,6 +44,15 @@ app.get ("/json", function (require, res) {
 
   //must be placed on the top because we are adding a middleware to all routes.
 
+// **8) Chain Middleware to create a Time server.
+  app.get('/now', function(req, res, next) {
+    req.time = newDate().toString()
+    next() 
+  }, function(req, res) {
+    res.json(
+      {time:req.time}
+    )
+  })
 
 
 
