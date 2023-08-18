@@ -21,7 +21,7 @@ app.use("/public", express.static(__dirname + "/public"))
 // })
 
 // **6) Use the env. file to configure the app
-app.get ("/json", function (require, res) {
+app.get ("/json", (require, res) => {
   if (process.env.MESSAGE_STYLE === "uppercase") {
     res.json(
       { "message": "HELLO JSON"}
@@ -49,7 +49,7 @@ app.get ("/json", function (require, res) {
     return new Date().toString()
   }
 
-  app.get('/now', function(req, res, next) {
+  app.get('/now', (req, res, next) => {
     req.time = getCurrentTimeString()
     next() 
   }, function(req, res) {
@@ -59,7 +59,7 @@ app.get ("/json", function (require, res) {
   })
 
 // **9) Get Route Parameter Input from the Client
-  app.get('/:word/echo', function(req, res) {
+  app.get('/:word/echo', (req, res) => {
     res.json({ echo: req.params.word })
   })  
 //requesting information --> route parameter
