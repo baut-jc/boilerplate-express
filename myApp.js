@@ -58,6 +58,16 @@ app.get ("/json", function (require, res) {
     )
   })
 
+// **9) Get Route Parameter Input from the Client
+  //requesting information --> route parameter
+      // --> named segments of the URL delimited by slashes(/)
+  //TASK:
+    // Build an echo server 
+        // GET /:word/echo
+    // Respond with a JSON object
+        //{echo: word}
+        //req.params.word
+
 
 
  module.exports = app;
