@@ -60,7 +60,7 @@ app.get ("/json", function (require, res) {
 
 // **9) Get Route Parameter Input from the Client
   app.get('/:word/echo', function(req, res) {
-    console.log(req.params)
+    res.json({ echo: req.params.word })
   })  
 //requesting information --> route parameter
       // --> named segments of the URL delimited by slashes(/)
