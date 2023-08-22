@@ -71,6 +71,11 @@ app.get ("/json", (require, res) => {
         //{echo: word}
         //req.params.word
 
+// **10) Get Query Parameter Input from the Client
+  // SYNTAX:
+    // query string --> delimited by question mark
+
+
     
 
 
