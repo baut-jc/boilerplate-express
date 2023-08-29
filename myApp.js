@@ -75,9 +75,9 @@ app.get ("/json", (require, res) => {
   // SYNTAX:
     // query string --> delimited by question mark
     // GET /name
-  app.get("/name", /*respond with JSON 
-  { name: 'firstname lastname'}*/
-  )
+  app.get("/name", function(req, res) {
+    console.log(req.query)
+  })
 
 
     
