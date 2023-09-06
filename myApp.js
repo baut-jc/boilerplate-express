@@ -1,11 +1,14 @@
 let express = require('express');
 let app = express();
 require('dotenv').config()
+var bodyParser = require('body-parser')
 
 app.use(function (require, res, next) {
   console.log(require.method + " " + require.path + " - " + require.ip)
   next()
 })
+
+// ** ----> Insert Challenge#11 here (middleware)
 
 app.get("/", (require, res) => {
   res.sendFile(__dirname + "/views/index.html")
@@ -77,8 +80,14 @@ app.get ("/json", (require, res) => {
     // GET /name
   app.get("/name", function(req, res) {
     res.json( {name: req.query.first + " " + req.query.last})
-    console.log(req.query)
   })
+
+
+// **11) Use body-parser to Parse POST Requests
+  //Install body parser
+  //place in the middle of the code block.
+      //to be added in the middle to run before running all other routes.
+
 
 
     
