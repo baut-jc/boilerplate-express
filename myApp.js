@@ -9,11 +9,12 @@ app.use(function (require, res, next) {
 })
 
 // ** ----> Insert Challenge#11 here (middleware)
-app.use(function(req, res, next) {
-  bodyParser.urlencoded({extended: false})
-  console.log(bodyParser)
-  next()
-})
+
+//parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+
+//parse application.json
+app.use(bodyParser.json())
 
 app.get("/", (require, res) => {
   res.sendFile(__dirname + "/views/index.html")
