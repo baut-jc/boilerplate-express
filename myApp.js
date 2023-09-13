@@ -94,7 +94,13 @@ app.get ("/json", (require, res) => {
   //place in the middle of the code block.
       //to be added in the middle to run before running all other routes.
 
+// **12) Get Data from POST Requests
+    // must input
+      // route: POST '/library'
+      // urlencoded_body: userId=546&bookId=6754
+      // req.body: {userId: '546', bookId: '6754'}
 
+app.post()
 
     
 
